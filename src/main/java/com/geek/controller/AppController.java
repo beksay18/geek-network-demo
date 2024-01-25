@@ -1,7 +1,9 @@
-package net.codejava;
+package com.geek.controller;
 
 import java.util.List;
 
+import com.geek.entity.User;
+import com.geek.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;

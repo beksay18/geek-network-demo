@@ -1,7 +1,8 @@
-package net.codejava;
+package com.geek;
 
 import javax.sql.DataSource;
 
+import com.geek.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

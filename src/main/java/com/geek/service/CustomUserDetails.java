@@ -1,7 +1,8 @@
-package net.codejava;
+package com.geek.service;
 
 import java.util.Collection;
 
+import com.geek.entity.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

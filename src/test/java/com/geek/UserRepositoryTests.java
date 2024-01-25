@@ -1,7 +1,9 @@
-package net.codejava;
+package com.geek;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.geek.entity.User;
+import com.geek.repository.UserRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

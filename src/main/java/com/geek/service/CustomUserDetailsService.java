@@ -1,5 +1,7 @@
-package net.codejava;
+package com.geek.service;
 
+import com.geek.repository.UserRepository;
+import com.geek.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

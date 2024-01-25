@@ -1,13 +1,13 @@
-package net.codejava;
+package com.geek;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootRegistrationLoginApplication {
+public class GeekNetworkApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootRegistrationLoginApplication.class, args);
+		SpringApplication.run(GeekNetworkApplication.class, args);
 	}
 
 }
