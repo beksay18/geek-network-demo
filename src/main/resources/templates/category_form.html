@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Sign Up - Geek</title>
+	<link th:rel="stylesheet" th:href="@{/styles.css} "/>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css} "/>
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h3>Add new category</h3>
+		</div>
+		<form th:action="@{/save_categories}" th:object="${category}"
+			method="post" style="max-width: 600px; margin: 0 auto;">
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Category Name: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{name}" class="form-control" required />
+				</div>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary">Save category</button>
+				<a th:href="@{/cancel}">Cancel</a>
+			</div>
+		</div>
+		</form>
+
+		<div>
+			<table class="table table-striped table-bordered" id="tables">
+				<thead class="thead-dark">
+				<tr>
+					<th>Category ID</th>
+					<th>Name</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="item: ${listCategories}">
+					<td style="width:400px" th:text="${item.id}">Category ID</td>
+					<td th:text="${item.name}">Category Name</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

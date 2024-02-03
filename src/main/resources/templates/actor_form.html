@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Sign Up - Geek</title>
+	<link th:rel="stylesheet" th:href="@{/styles.css} "/>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css} "/>
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h3>Add new Actor</h3>
+		</div>
+		<form th:action="@{/save_actors}" th:object="${actors}"
+			method="post" style="max-width: 600px; margin: 0 auto;">
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">First Name: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{firstName}" class="form-control" required />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Last Name: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{lastName}" class="form-control" required />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Birth Date: </label>
+				<div class="col-8">
+					<input type="date" th:field="*{birthDate}" class="form-control" required />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Gender: </label>
+				<div class="col-8">
+					<select name="gender">
+						<option th:each="item : ${listGenders}"
+								th:value="${item}" th:text="${item.displayValue}"></option>
+					</select>
+				</div>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary">Save actor</button>
+				<a th:href="@{/cancel}">Cancel</a>
+			</div>
+		</div>
+		</form>
+
+		<div>
+			<table class="table table-striped table-bordered" id="tables">
+				<thead class="thead-dark">
+				<tr>
+					<th>Actor ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Gender</th>
+					<th>Birth Date</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="item: ${listActors}">
+					<td th:text="${item.id}">Actor ID</td>
+					<td th:text="${item.firstName}">First Name</td>
+					<td th:text="${item.lastName}">Last Name</td>
+					<td th:text="${item.gender}">Gender</td>
+					<td th:text="${#dates.format(item.birthDate, 'yyyy-MM-dd')}">Birth Date</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,9 +1,10 @@
 package com.geek.entity;
 
 import javax.persistence.*;
+
 @Entity
-@Table(name = "languages")
-public class Language {
+@Table(name = "categories")
+public class Category {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

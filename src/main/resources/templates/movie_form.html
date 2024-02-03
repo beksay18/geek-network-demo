@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Movie Form</title>
+	<link th:rel="stylesheet" th:href="@{/styles.css} "/>
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css} "/>
+</head>
+<body>
+	<div class="container text-center">
+		<div>
+			<h1>Add new movie</h1>
+		</div>
+		<form th:action="@{/save_movie}" th:object="${movie}"
+			method="post" style="max-width: 600px; margin: 0 auto;">
+		<div class="m-3">
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Title: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{title}" class="form-control" required />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Description: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{description}" class="form-control" required />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Categories: </label>
+				<div class="col-8">
+					<select class="form-control" th:field="*{category}" required>
+						<th:block th:each="cat : ${listCategories}">
+							<option th:value="${cat.id}">
+								[[${cat.name}]]
+							</option>
+						</th:block>
+					</select>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Actors: </label>
+				<div class="col-8">
+					<select class="form-control" th:field="*{actors}" required multiple
+							style="resize: vertical; height: 200px">
+						<th:block th:each="cat : ${listActors}">
+							<option th:value="${cat.id}">
+								[[${cat.fullName}]]
+							</option>
+						</th:block>
+					</select>
+				</div>
+			</div>
+			<div>
+				<button type="submit" class="btn btn-primary">Save movie</button>
+				<a th:href="@{/cancel}">Cancel</a>
+			</div>
+		</div>
+		</form>
+	</div>
+</body>
+</html>
