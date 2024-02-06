@@ -4,14 +4,31 @@
 	<meta charset="ISO-8859-1">
 	<link th:rel="stylesheet" th:href="@{/login.css} "/>
 	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css} "/>
-	<title>Welcome to CodeJava Home</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<title>Welcome to Geek Networks</title>
 </head>
 <body>
-	<div class="container text-center">
-		<br/><br/><br/>
-		<h1>Welcome to Geek Networks</h1>
-		<h3><a th:href="@{/register}">Register</a></h3>
-		<h3><a th:href="@{/login}">Login</a></h3>
+
+	<nav class="w3-sidebar w3-hide-medium w3-hide-small" style="width:40%">
+		<img th:src="@{/images/geek-logo.jpeg}" class="bigImage" >
+	</nav>
+	<div class="w3-main w3-padding-large" style="margin-left:40%">
+		<header class="w3-container w3-center" style="padding:128px 16px" id="home">
+			<h1 class="w3-jumbo"><b>Welcome to Geek Network</b></h1>
+			<p>Database course.</p>
+			<a th:href="@{/login}">
+				<button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+					<i class="fa fa-user"></i> Login
+				</button>
+			</a>
+			<a th:href="@{/register}">
+				<button class="w3-button w3-light-grey w3-padding-large w3-margin-top">
+					<i class="fa fa-user-plus"></i> Register
+				</button>
+			</a>
+		</header>
 	</div>
 	
 </body>

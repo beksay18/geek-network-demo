@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="ISO-8859-1">
-	<title>List Users</title>
+	<title>List of Movies</title>
 	<link th:rel="stylesheet" th:href="@{/styles.css} "/>
 	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/4.3.1/css/bootstrap.min.css} "/>
 </head>
@@ -33,26 +33,32 @@
 				<tr>
 					<th>Movie ID</th>
 					<th>Title</th>
-					<th>Description</th>
+					<th>Languages</th>
 					<th>Category</th>
 					<th>Actors</th>
+					<th>Duration</th>
+					<th>Costs</th>
+					<th>Rating</th>
 				</tr>
 			</thead>
 			<tbody>
 				<tr th:each="item: ${listMovies}">
-					<td th:text="${item.id}">User ID</td>
-					<td th:text="${item.title}">E-mail</td>
-					<td th:text="${item.description}">First Name</td>
+					<td th:text="${item.id}"></td>
+					<td th:text="${item.title}"></td>
+					<td>
+						<div th:each="lang : ${item.languageList}">
+							<span>[[${lang.displayValue}]]</span>
+						</div>
+					</td>
 					<td>[[${item.category.name}]]</td>
 					<td>
-						<table>
-							<tr th:each="actor : ${item.actors}">
-								<td>
-									[[${actor.fullName}]]
-								</td>
-							</tr>
-						</table>
+						<div th:each="actor : ${item.actors}">
+							<span>[[${actor.fullName}]]</span>
+						</div>
 					</td>
+					<td th:text="${item.duration}"></td>
+					<td th:text="${item.costs}"></td>
+					<td th:text="${item.rating}"></td>
 				</tr>
 			</tbody>
 		</table>

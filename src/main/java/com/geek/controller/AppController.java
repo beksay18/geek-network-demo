@@ -2,10 +2,7 @@ package com.geek.controller;
 
 import java.util.*;
 
-import com.geek.entity.Actors;
-import com.geek.entity.Category;
-import com.geek.entity.Movie;
-import com.geek.entity.User;
+import com.geek.entity.*;
 import com.geek.repository.ActorRepository;
 import com.geek.repository.CategoryRepository;
 import com.geek.repository.MovieRepository;
@@ -48,9 +45,11 @@ public class AppController {
 	public String showMovieForm(Model model) {
 		List<Actors> listActors = actorRepository.findAll();
 		List<Category> listCategories = categoryRepository.findAll();
+		List<Languages> listLanguages = List.of(Languages.values());
 		model.addAttribute("movie", new Movie());
 		model.addAttribute("listActors", listActors);
 		model.addAttribute("listCategories", listCategories);
+		model.addAttribute("listLanguages", listLanguages);
 		model.addAttribute("actors", new HashSet<>());
 		return "movie_form";
 	}

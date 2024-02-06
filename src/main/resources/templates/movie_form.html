@@ -39,6 +39,37 @@
 				</div>
 			</div>
 			<div class="form-group row">
+				<label class="col-4 col-form-label">Languages: </label>
+				<div class="col-8">
+					<select class="form-control" th:field="*{languageList}" required multiple
+							style="resize: vertical; height: 100px">
+						<th:block th:each="lang : ${listLanguages}">
+							<option th:value="${lang}">
+								[[${lang.displayValue}]]
+							</option>
+						</th:block>
+					</select>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Duration: </label>
+				<div class="col-8">
+					<input type="text" th:field="*{duration}" class="form-control" required />
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Costs: </label>
+				<div class="col-8">
+					<input type="number" th:field="*{costs}" class="form-control" required step="any"/>
+				</div>
+			</div>
+			<div class="form-group row">
+				<label class="col-4 col-form-label">Rating: </label>
+				<div class="col-8">
+					<input type="number" th:field="*{rating}" class="form-control" required step="any"/>
+				</div>
+			</div>
+			<div class="form-group row">
 				<label class="col-4 col-form-label">Actors: </label>
 				<div class="col-8">
 					<select class="form-control" th:field="*{actors}" required multiple

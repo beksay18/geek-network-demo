@@ -1,32 +1,8 @@
-
-Certainly! Here's a cute and colorful CSS design for your login page:
-
-css
-Copy code
-body {
-    background-color: #f9fbe7;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.container {
-    margin-top: 50px;
-}
-
-h1 {
-    color: #673ab7;
-}
-
-h3 {
-    margin-top: 20px;
-    color: #512da8;
-}
-
-a {
-    color: #512da8;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #311b92;
+.bigImage {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/images/geek-logo.jpeg');
+  width:100%;
+  margin-top: 10%;
 }
