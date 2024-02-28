@@ -6,7 +6,9 @@ public enum Languages {
     TURKISH("Turkish"),
     SPANISH("Spanish"),
     RUSSIAN("Russian"),
-    ITALIAN("Italian");
+    ITALIAN("Italian"),
+    JAPANESE("Japanese"),
+    CHINESE("Chinese");
 
     private final String displayValue;
 
